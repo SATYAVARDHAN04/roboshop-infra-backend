@@ -25,10 +25,14 @@ data "aws_ssm_parameter" "private_subnet_id" {
   name = "/${var.project}/${var.environment}/private_subnet_ids"
 }
 
-data "aws_ssm_parameter" "catalogue_sg" {
-  name = "/${var.project}/${var.environment}/catalogue_sg"
+data "aws_ssm_parameter" "sg_id" {
+  name = "/${var.project}/${var.environment}/${var.component}_sg"
 }
 
 data "aws_ssm_parameter" "backend_alb_listerner_arn" {
   name = "/${var.project}/${var.environment}/backend_alb_listerner_arn"
+}
+
+data "aws_ssm_parameter" "frontend_alb_listerner_arn" {
+  name = "/${var.project}/${var.environment}/frontend_alb_listerner_arn"
 }

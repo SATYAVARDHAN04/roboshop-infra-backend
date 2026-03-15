@@ -30,3 +30,7 @@ variable "common_tags" {
     "Version"   = "1.0"
   }
 }
+
+variable "component" {
+  type = string
+}
